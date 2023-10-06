@@ -1,0 +1,127 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.image-logo {
+    height: 75px;
+}
+
+.bg-yellow {
+    background-color: #F9D328 !important;
+}
+
+.fa-asterisk {
+    margin-top: -2px;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 7px;
+}
+
+.image-dvp {
+    position: fixed;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+    max-height: 45px;
+}
+
+.sub-seccion {
+    background-color: #f6be37;
+    color: #000000;
+}
+
+#overlay {
+    position: relative;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+#overlay2 {
+    position: absolute;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 50%;
+    left: 49%;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+    opacity: 1 !important;
+}
+
+.custom-file-input~.custom-file-label::after {
+    content: "Buscar";
+}
+
+.custom-file-input-2~.custom-file-label::after {
+    content: "Buscar";
+}
+
+.active-amber-textarea-2 textarea.md-textarea {
+    border-bottom: 1px solid #ffa2009d;
+    box-shadow: 0 1px 0 0 #ffa200a1;
+}
+
+.active-amber-textarea-2.md-form label {
+    color: #252421;
+}
+
+.home-button {
+    height: 30px;
+    width: 120px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px #999;
+    font-size: 12px;
+}
+
+.home-button:hover {
+    background-color: #F9D328 !important;
+    font-weight: bold;
+}
+
+.home-button:focus {
+    outline: none;
+}
+
+.instructions:hover {
+    background-color: rgba(0, 0, 0, 0.781) !important;
+    color: white !important;
+}
+
+.instructions {
+    background: #F9D328;
+    color: rgba(0, 0, 0, 0.699);
+}
+
+.submit-button {
+    padding: 8px 15px;
+    background-color: #F9D328;
+}
+
+.submit-button:hover {
+    background-color: rgba(0, 0, 0, 0.781) !important;
+    color: white !important;
+}
+

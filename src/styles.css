@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #131313;
+    background: -moz-linear-gradient(to bottom, #131313 1%, #0e4669 100%) !important;
+    background: -webkit-linear-gradient(to bottom, #131313 1%, #0e4669 100%) !important;
+    background: linear-gradient(to bottom, #131313 1%, #0e4669 100%) !important;
+}
+
+html{
+    min-height: 100%;
+}

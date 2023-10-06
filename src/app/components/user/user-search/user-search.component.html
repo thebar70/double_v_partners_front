@@ -1,0 +1,42 @@
+<div class="mt-2 mb-3 mb-md-4 p-2 p-md-4 bg-white rounded container">
+    <h5 class="text-center">Repositorio público GitHub</h5>
+    <hr>
+    <section class="section">
+        <div class="container">
+            <div class="justify-content-center row">
+                <div class="col-lg-12">
+                    <div class="candidate-list-widgets mb-4">
+                        <div class="g-2 row">
+                            <div class="col-lg-3">
+                                <div class="filler-job-form">
+                                    <i class="uil uil-briefcase-alt"></i><input [(ngModel)]="currentFilter"
+                                        placeholder="Nombre usuario ... " type="search"
+                                        class="form-control filler-job-input-box form-control" />
+                                </div>
+                                <div *ngIf="inputErrors" class="font-error">
+                                    {{inputErrors}}
+                                </div>
+                                <div *ngIf="resultsNotFound" class="small font-error">
+                                    <p class="mb-0">No se encontraron resultados para criterio de busqueda</p>
+                                </div>
+            
+                            </div>
+                            <div class="col-lg-3">
+                                <div>
+                                    <button class="btn btn-primary" (click)="searchUser()">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="candidate-list">
+                        <app-user-list [user]="user" *ngFor="let user of users"></app-user-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

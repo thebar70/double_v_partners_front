@@ -1,0 +1,30 @@
+<ng-container *ngIf="user">
+    <a [routerLink]="['/user/show/',user.login]">
+        <div class="candidate-list-box bookmark-post card mt-4">
+            <div class="p-4 card-body">
+                <div class="align-items-center row">
+                    <div class="col-auto">
+                        <div class="candidate-list-images">
+                            <a href="#"><img [src]="user.avatar_url" alt=""
+                                    class="avatar-md img-thumbnail rounded-circle" /></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="candidate-list-content mt-3 mt-lg-0">
+                            <h5 class="fs-19 mb-0">
+                                <a class="primary-link" href="#">{{ user.login }}</a><span
+                                    class="badge bg-success ms-1"><i class="fa-solid fa-star"></i>{{user.score}}</span>
+                            </h5>
+                            <ul class="list-inline mb-0 text-muted">
+                                <li class="list-inline-item"><i class="fa-regular fa-id-badge"></i> {{user.id}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="favorite-icon">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+        </div>
+    </a>
+</ng-container>
