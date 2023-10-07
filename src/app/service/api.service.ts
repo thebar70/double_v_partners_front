@@ -16,11 +16,10 @@ export class ApiService {
    * Request Obervable
   */
   public getUser(filter: string): Observable<any> {
-    console.log('filter', filter);
     return this.http.get<any>(this.BASE_URL + 'users/' + filter).pipe(
       catchError(e => {
         if (e.status == 404) this.route.navigate(['/not-found']);
-
+        
         return e;
       })
     )

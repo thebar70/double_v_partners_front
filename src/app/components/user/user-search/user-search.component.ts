@@ -1,7 +1,7 @@
 import { AlertComponent } from '../../core/alert/alert.component';
 import { ApiService } from 'src/app/service/api.service';
 import { User } from 'src/app/models/users.model';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-user-search',
@@ -18,7 +18,8 @@ export class UserSearchComponent {
 
   users: User[] = [];
 
-  constructor(private apiService: ApiService, private alert: AlertComponent) { }
+  apiService = inject(ApiService);
+  constructor( private alert: AlertComponent) { }
 
   searchUser() {
     if (!this.validateFilter()) return;

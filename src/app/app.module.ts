@@ -35,8 +35,8 @@ import { DescriptionComponent } from './components/core/information/description/
     HttpClientModule,
     FormsModule,
     NgApexchartsModule,
-    NgxAwesomePopupModule.forRoot(), // Essential, mandatory main module.
-    ToastNotificationConfigModule.forRoot() // Essential, mandatory toast module. 
+    NgxAwesomePopupModule.forRoot(), 
+    ToastNotificationConfigModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

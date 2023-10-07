@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/users.model';
 
 import {
@@ -33,7 +33,7 @@ export class UserShowComponent implements OnInit {
   public chartInteractionOptions: Partial<ChartOptions> | any;
   public chartRepoOptions: Partial<ChartOptions> | any;
 
-  constructor(private route: ActivatedRoute) { }
+  route = inject(ActivatedRoute);
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
