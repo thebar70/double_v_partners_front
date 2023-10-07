@@ -19,7 +19,10 @@
                                 <div *ngIf="resultsNotFound" class="small font-error">
                                     <p class="mb-0">No se encontraron resultados para criterio de busqueda</p>
                                 </div>
-            
+                                <div class="text-center">
+                                    <p class="lead" *ngIf="loading">Loading...</p>
+                                </div>
+
                             </div>
                             <div class="col-lg-3">
                                 <div>
@@ -38,5 +41,8 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section *ngIf="users.length === 0">
+        <app-description></app-description>
     </section>
 </div>

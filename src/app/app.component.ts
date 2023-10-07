@@ -12,10 +12,8 @@ import { publishFacade } from '@angular/compiler';
 
 export class AppComponent {
 
-
+  public title: string = 'double_v_partners_front-app';
   ngOnInit() {
   }
-
-
 
 }

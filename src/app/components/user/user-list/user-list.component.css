@@ -1,127 +1,64 @@
-body {
-    background-color: #ffffff;
-    font-family: 'Raleway', sans-serif;
+.bookmark-post .favorite-icon a,
+.job-box.bookmark-post .favorite-icon a {
+    background-color: #da3746;
+    color: #fff;
+    border-color: danger;
 }
 
-.image-logo {
-    height: 75px;
-}
-
-.bg-yellow {
-    background-color: #F9D328 !important;
-}
-
-.fa-asterisk {
-    margin-top: -2px;
-    vertical-align: middle;
-    font-weight: normal;
-    font-size: 7px;
-}
-
-.image-dvp {
-    position: fixed;
-    height: 50px;
-    bottom: 15px;
-    right: 15px;
-    max-height: 45px;
-}
-
-.sub-seccion {
-    background-color: #f6be37;
-    color: #000000;
-}
-
-#overlay {
-    position: relative;
-    /* Sit on top of the page content */
-    display: none;
-    /* Hidden by default */
-    width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer;
-    /* Add a pointer on hover */
-}
-
-#overlay2 {
-    position: absolute;
-    /* Sit on top of the page content */
-    display: none;
-    /* Hidden by default */
-    width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
-    top: 50%;
-    left: 49%;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-    /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer;
-    /* Add a pointer on hover */
-    opacity: 1 !important;
-}
-
-.custom-file-input~.custom-file-label::after {
-    content: "Buscar";
-}
-
-.custom-file-input-2~.custom-file-label::after {
-    content: "Buscar";
-}
-
-.active-amber-textarea-2 textarea.md-textarea {
-    border-bottom: 1px solid #ffa2009d;
-    box-shadow: 0 1px 0 0 #ffa200a1;
-}
-
-.active-amber-textarea-2.md-form label {
-    color: #252421;
-}
-
-.home-button {
+.favorite-icon a {
+    display: inline-block;
+    width: 30px;
     height: 30px;
-    width: 120px;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 3px 3px 3px 3px #999;
-    font-size: 12px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #eff0f2;
+    border-radius: 6px;
+    color: rgba(173, 181, 189, .55);
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
 }
 
-.home-button:hover {
-    background-color: #F9D328 !important;
-    font-weight: bold;
+.candidate-list-box .favorite-icon {
+    position: absolute;
+    right: 22px;
+    top: 22px;
 }
 
-.home-button:focus {
-    outline: none;
+.br-5 {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
-.instructions:hover {
-    background-color: rgba(0, 0, 0, 0.781) !important;
-    color: white !important;
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
 
-.instructions {
-    background: #F9D328;
-    color: rgba(0, 0, 0, 0.699);
+.avatar-md {
+    height: 5rem;
+    width: 5rem;
 }
 
-.submit-button {
-    padding: 8px 15px;
-    background-color: #F9D328;
+.fs-19 {
+    font-size: 19px;
 }
 
-.submit-button:hover {
-    background-color: rgba(0, 0, 0, 0.781) !important;
-    color: white !important;
+.primary-link {
+    color: #314047;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
 }
 
+.fs-14 {
+    font-size: 14px;
+}
+
+.bg-soft-secondary {
+    background-color: rgba(116, 120, 141, .15) !important;
+    color: #74788d !important;
+}
+
+.mt-1 {
+    margin-top: 0.25rem !important;
+}

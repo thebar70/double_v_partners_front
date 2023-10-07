@@ -1,15 +1,15 @@
-<div class="mt-2 mb-3 mb-md-4 p-2 p-md-4 bg-white rounded">
-    <h5 class="text-center">Usuario a mostarr</h5>
+<div class="mt-2 mb-3 mb-md-4 p-2 p-md-4 bg-white rounded container">
+    <h5 class="text-center">GitHub User</h5>
     <hr>
     <ng-container *ngIf="user">
-        <section>
+        <section style="background-color: #eee;">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card mb-4">
                             <div class="card-body text-center">
-                                <img [src]="user.avatar_url"
-                                    alt="avatar" class="rounded-circle img-fluid img-card-profile">
+                                <img [src]="user.avatar_url" alt="avatar"
+                                    class="rounded-circle img-fluid img-card-profile">
                                 <h5 class="my-3">{{user.login}}</h5>
                                 <p class="text-muted mb-1">{{user.company}}</p>
                                 <p class="text-muted mb-4">{{user.location}}</p>
@@ -32,7 +32,6 @@
                                         <p class="mb-0"><a [href]="user.organizations_url"
                                                 target="_blank">Organizaciones</a></p>
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
@@ -45,10 +44,18 @@
                                         <p class="mb-0">Nombre Completo</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">{{user.name}}</p>
+                                        <p class="text-muted mb-0">{{user.name ? user.name : user.login}}</p>
                                     </div>
                                 </div>
-
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Tipo</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="text-muted mb-0">{{user.type}}</p>
+                                    </div>
+                                </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
@@ -66,13 +73,29 @@
                                     <div class="card-body">
                                         <p class="mb-1 little-text">Seguidores</p>
                                         <div class="progress rounded">
-                                            <div class="progress-bar" role="progressbar"
-                                                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <p class="mt-4 mb-1 little-text">Seguidos</p>
                                         <div class="progress rounded">
-                                            <div class="progress-bar" role="progressbar"
-                                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="72"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-4 mb-md-0">
+                                    <div class="card-body">
+                                        <p class="mb-1 little-text">Repositorios públicos</p>
+                                        <div class="progress rounded">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="mt-4 mb-1 little-text">Website Markup</p>
+                                        <div class="progress rounded">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="72"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
 
                                     </div>
@@ -81,17 +104,17 @@
                             <div class="col-md-6">
                                 <div class="card mb-4 mb-md-0">
                                     <div class="card-body">
-                                        <p class="mb-1 little-text">Repositorios públicos</p>
-                                        <div class="progress rounded">
-                                            <div class="progress-bar" role="progressbar"
-                                                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <p class="mt-4 mb-1 little-text">Website Markup</p>
-                                        <div class="progress rounded">
-                                            <div class="progress-bar" role="progressbar"
-                                                aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                        <apx-chart [series]="chartInteractionOptions.series" [chart]="chartInteractionOptions.chart"
+                                            [xaxis]="chartInteractionOptions.xaxis" [title]="chartInteractionOptions.title"></apx-chart>
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-4 mb-md-0">
+                                    <div class="card-body">
+                                        <apx-chart [series]="chartRepoOptions.series" [chart]="chartRepoOptions.chart"
+                                            [xaxis]="chartRepoOptions.xaxis" [title]="chartRepoOptions.title"></apx-chart>
                                     </div>
                                 </div>
                             </div>
@@ -101,5 +124,4 @@
             </div>
         </section>
     </ng-container>
-
 </div>

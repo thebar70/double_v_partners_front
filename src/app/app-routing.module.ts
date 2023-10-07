@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserShowComponent } from './components/user/user-show/user-show.component';
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './components/app/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './components/core/page-not-found/page-not-found.component';
 import { UserSearchComponent } from './components/user/user-search/user-search.component';
+import { scoreGuard } from './guards/score.guard';
 
 const routes: Routes = [
   {
@@ -18,9 +19,10 @@ const routes: Routes = [
     component: UserSearchComponent
   },
   {
-    path: 'user/show/:id',
+    path: 'user/show/:login',
     title: 'Mostrar Usuario',
-    component: UserShowComponent
+    component: UserShowComponent,
+    canActivate: [scoreGuard]
   },
   { path: '', redirectTo: '/user/search', pathMatch: 'full' },
   {

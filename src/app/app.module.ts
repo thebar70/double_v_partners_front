@@ -9,8 +9,16 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserShowComponent } from './components/user/user-show/user-show.component';
-import { PageNotFoundComponent } from './components/app/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './components/core/page-not-found/page-not-found.component';
 import { UserSearchComponent } from './components/user/user-search/user-search.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+
+import { 
+  NgxAwesomePopupModule, 
+  ToastNotificationConfigModule 
+} from '@costlydeveloper/ngx-awesome-popup';
+
+import { DescriptionComponent } from './components/core/information/description/description.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +26,17 @@ import { UserSearchComponent } from './components/user/user-search/user-search.c
     UserListComponent,
     UserShowComponent,
     PageNotFoundComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgApexchartsModule,
+    NgxAwesomePopupModule.forRoot(), // Essential, mandatory main module.
+    ToastNotificationConfigModule.forRoot() // Essential, mandatory toast module. 
   ],
   providers: [],
   bootstrap: [AppComponent]

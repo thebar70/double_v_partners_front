@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
-import { User } from 'src/app/models/users.model';
+import { AlertComponent } from '../../core/alert/alert.component';
 import { ApiService } from 'src/app/service/api.service';
+import { User } from 'src/app/models/users.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user-search',
@@ -9,30 +9,45 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./user-search.component.css']
 })
 export class UserSearchComponent {
-  http = inject(HttpClient);
+
+  private regex: RegExp = /\bdoublevpartners\b/;
+  protected resultsNotFound: boolean = false;
+  protected loading: boolean = false;
+  protected inputErrors: any = false;
+  protected currentFilter: string = '';
+
   users: User[] = [];
 
-  public currentFilter: string = '';
-  private regex: RegExp = /\bdoublevpartners\b/;
-  protected inputErrors: any = false;
-  protected resultsNotFound: boolean = false;
-
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private alert: AlertComponent) { }
 
   searchUser() {
-    this.inputErrors = this.resultsNotFound = false;
-    if (this.currentFilter.length < 4) return;
+    if (!this.validateFilter()) return;
 
-    const forbiddenWord: boolean = this.regex.test(this.currentFilter);
-    if(forbiddenWord) {
+    this.fetchData();
+  }
+
+  validateFilter() {
+    this.inputErrors = this.resultsNotFound = false;
+    if (this.currentFilter.length < 4) return false;
+
+    if (this.regex.test(this.currentFilter)) {
       this.inputErrors = 'Este criterio de busqueda no esta permitido';
-      return;
+      this.alert.showErrorMessage('Palabra restringida');
+
+      return false;
     }
 
-    this.apiService.getData(this.currentFilter).subscribe(data => {
+    return true;
+  }
+
+  fetchData() {
+    this.loading = true;
+    this.apiService.search(this.currentFilter).then(data => {
+
       this.users = data.items;
-      
-      this.resultsNotFound = this.users.length === 0;
+
+      this.loading = false;
+      this.resultsNotFound = (this.users.length === 0);
     });
   }
 }
