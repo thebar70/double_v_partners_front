@@ -19,7 +19,7 @@ export class UserSearchComponent {
   users: User[] = [];
 
   apiService = inject(ApiService);
-  constructor( private alert: AlertComponent) { }
+  constructor(private alert: AlertComponent) { }
 
   searchUser() {
     if (!this.validateFilter()) return;
@@ -43,7 +43,7 @@ export class UserSearchComponent {
 
   fetchData() {
     this.loading = true;
-    this.apiService.search(this.currentFilter).then(data => {
+    this.apiService.searchUsers(this.currentFilter).then(data => {
 
       this.users = data.items;
 

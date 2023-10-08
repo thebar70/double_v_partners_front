@@ -13,7 +13,7 @@ export const scoreGuard: CanActivateFn = (route, state) => {
   return apiService.getUser(userLogin).pipe(
     map((data) => {
       if (data.followers == 0 && data.public_repos == 0) {
-        alert.showWarningMessage('Este usuario no puede ser consultado');
+        alert.showWarningMessage('Usuario sin seguidores y sin repositorios públicos');
         return false;
       }
       route.data = data;

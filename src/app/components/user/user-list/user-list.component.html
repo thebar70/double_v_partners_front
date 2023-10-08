@@ -1,30 +1,23 @@
-<ng-container *ngIf="user">
-    <a [routerLink]="['/user/show/',user.login]">
-        <div class="candidate-list-box bookmark-post card mt-4">
-            <div class="p-4 card-body">
-                <div class="align-items-center row">
-                    <div class="col-auto">
-                        <div class="candidate-list-images">
-                            <a href="#"><img [src]="user.avatar_url" alt=""
-                                    class="avatar-md img-thumbnail rounded-circle" /></a>
+<a [routerLink]="['/user/show/',user.login]">
+    <div class="col-xl-12 mb-4">
+        <div class="card card-elevation">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img [src]="user.avatar_url" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">{{ user.login }}</p>
+                            <p class="text-muted mb-0">Id: {{user.id}}</p>
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="candidate-list-content mt-3 mt-lg-0">
-                            <h5 class="fs-19 mb-0">
-                                <a class="primary-link" href="#">{{ user.login }}</a><span
-                                    class="badge bg-success ms-1"><i class="fa-solid fa-star"></i>{{user.score}}</span>
-                            </h5>
-                            <ul class="list-inline mb-0 text-muted">
-                                <li class="list-inline-item"><i class="fa-regular fa-id-badge"></i> Id: {{user.id}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="favorite-icon">
-                    <i class="fa-brands fa-github"></i>
+                    <span class="badge rounded-pill badge-success">Active</span>
                 </div>
             </div>
+            <div class="card-footer border-0 bg-light p-2 d-flex justify-content-around">
+                <a class="btn btn-link m-0 text-reset" href="#" role="button"
+                    data-ripple-color="primary"><i class="fa-solid fa-star"></i>{{user.score}}</a>
+                <a class="btn btn-link m-0 text-reset" href="#" role="button" data-ripple-color="primary"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
-    </a>
-</ng-container>
+    </div>
+</a>

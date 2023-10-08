@@ -240,7 +240,7 @@ describe('ApiService', () => {
 
   it('search return userList', (done) => {
     httpClientMock.get.mockReturnValue(of(userListMock));
-    service.search('dummy').then(res => {
+    service.searchUsers('dummy').then(res => {
       expect(res.items.length).toBe(10);
       done();
     });

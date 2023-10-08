@@ -1,48 +1,46 @@
-<div class="mt-2 mb-3 mb-md-4 p-2 p-md-4 bg-white rounded container">
-    <h5 class="text-center">Repositorio público GitHub</h5>
-    <hr>
-    <section class="section">
+<div class="container  p-2 p-md-4 bg-white rounded">
+    <section>
         <div class="container">
-            <div class="justify-content-center row">
+            <div class="justify-content-center row mt-4">
                 <div class="col-lg-12">
                     <div class="candidate-list-widgets mb-4">
                         <div class="g-2 row">
-                            <div class="col-lg-3">
+                            <div class="col-lg-10">
                                 <div class="filler-job-form">
                                     <i class="uil uil-briefcase-alt"></i><input [(ngModel)]="currentFilter"
                                         placeholder="Nombre usuario ... " type="search"
-                                        class="form-control filler-job-input-box form-control" />
+                                        class="form-control filler-job-input-box form-control focus-border" />
                                 </div>
                                 <div *ngIf="inputErrors" class="font-error">
                                     {{inputErrors}}
                                 </div>
-                                <div *ngIf="resultsNotFound" class="small font-error">
+                                <div *ngIf="resultsNotFound" class="small font-error mt-2">
                                     <p class="mb-0">No se encontraron resultados para criterio de busqueda</p>
                                 </div>
                                 <div class="text-center">
                                     <p class="lead" *ngIf="loading">Loading...</p>
                                 </div>
-
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-2">
                                 <div>
-                                    <button class="btn btn-primary" (click)="searchUser()">Buscar</button>
+                                    <button class="btn btn-primary" (click)="searchUser()"><i
+                                            class="fa-solid fa-magnifying-glass"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="candidate-list">
-                        <app-user-list [user]="user" *ngFor="let user of users"></app-user-list>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-    <section *ngIf="users.length === 0">
-        <app-description></app-description>
+    <section class="wrapper" style="max-height: 48em;">
+        <div class="col-lg-12">
+            <div class="candidate-list">
+                <app-user-list [user]="user" *ngFor="let user of users"></app-user-list>
+            </div>
+        </div>
+        <section *ngIf="users.length === 0">
+            <app-description></app-description>
+        </section>
     </section>
 </div>

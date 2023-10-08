@@ -13,12 +13,15 @@ import { PageNotFoundComponent } from './components/core/page-not-found/page-not
 import { UserSearchComponent } from './components/user/user-search/user-search.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
-import { 
-  NgxAwesomePopupModule, 
-  ToastNotificationConfigModule 
+import {
+  NgxAwesomePopupModule,
+  ToastNotificationConfigModule
 } from '@costlydeveloper/ngx-awesome-popup';
 
 import { DescriptionComponent } from './components/core/information/description/description.component';
+import { TicketComponent } from './components/ticket/ticket.component';
+import { GraphQLModule } from './graphql.module';
+import { ListTicketComponent } from './components/ticket/list-ticket/list-ticket.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { DescriptionComponent } from './components/core/information/description/
     UserShowComponent,
     PageNotFoundComponent,
     UserSearchComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    TicketComponent,
+    ListTicketComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +40,8 @@ import { DescriptionComponent } from './components/core/information/description/
     HttpClientModule,
     FormsModule,
     NgApexchartsModule,
-    NgxAwesomePopupModule.forRoot(), 
-    ToastNotificationConfigModule.forRoot()
+    NgxAwesomePopupModule.forRoot(),
+    ToastNotificationConfigModule.forRoot(), GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

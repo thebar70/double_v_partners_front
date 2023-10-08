@@ -1,0 +1,18 @@
+<div class="container  p-2 p-md-4 bg-white rounded text-center">
+	<section>
+		<div class="container">
+			<p class="text-muted mb-0">La información que aquí se muestra es obtenida a través de una conexión api via
+				graphQL, esta información
+				la entrega el host donde esta corriendo la prueba técnica del backend.</p>
+			<p class="text-muted mb-0">Si no observa información, asegurese de que el back esta corriendo en
+				<a href="http://127.0.0.1:9050">http://127.0.0.1:9050</a></p>
+		</div>
+	</section>
+	<section class="wrapper mt-4" style="max-height: 48em;">
+		<div class="col-lg-12">
+			<div class="candidate-list">
+				<app-list-ticket [ticket]="ticket" *ngFor="let ticket of tickets"></app-list-ticket>
+			</div>
+		</div>
+	</section>
+</div>

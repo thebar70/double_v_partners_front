@@ -1,0 +1,17 @@
+<div class="col-xl-12 mb-4">
+    <div class="card card-elevation">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">{{ ticket.description }}</p>
+                        <p class="text-muted mb-0">Fecha Registro: {{ticket.created_at}}</p>
+                        <p class="text-muted mb-0">Ultima Actualización: {{ticket.updated_at}}</p>
+                    </div>
+                </div>
+                <span class="badge rounded-pill badge-success">{{ ticket.status }}</span>
+                <span class="badge rounded-pill badge-success">{{ ticket.uuid }}</span>
+            </div>
+        </div>
+    </div>
+</div>

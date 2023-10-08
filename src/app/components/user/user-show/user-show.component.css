@@ -1,12 +1,15 @@
-.img-card-profile{
+.img-card-profile {
     width: 150px;
 }
-.little-text{
+
+.little-text {
     font-size: .77rem;
 }
-.progress{
+
+.progress {
     height: 5px;
 }
-.progress-bar{
+
+.progress-bar {
     width: 80%;
 }
